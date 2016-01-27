@@ -1,6 +1,6 @@
 #!/bin/bash
-if [ "${PUBKEY}" = "" ] || [ "${USERNAME}" = "" ] || [ "${VHOSTNAME}" = "" ]; then
-    echo "You need to specify a ssh PUBKEY, a USERNAME and VHOSTNAME"
+if [ "${PUBKEY}" = "" ] || [ "${USERNAME}" = "" ] || [ "${HOSTNAME}" = "" ]; then
+    echo "You need to specify a ssh PUBKEY, a USERNAME and HOSTNAME"
     exit 1
 fi
 
@@ -23,7 +23,7 @@ if [ -f "/root/.firstrun" ]; then
     cd /root/dokku
     make sshcommand
     echo $PUBKEY | sshcommand acl-add dokku ${USERNAME}
-    echo $VHOSTNAME > /home/dokku/VHOST
+    echo $HOSTNAME > /home/dokku/HOSTNAME
 fi
 
 # Start SSH and Nginx
