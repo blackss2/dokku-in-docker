@@ -21,7 +21,7 @@ VOLUME ["/home/dokku","/var/lib/docker"]
 
 ENV HOME /root
 WORKDIR /root
-cp /root/wrapdocker /usr/local/bin/wrapdocker
+RUN cp /root/wrapdocker /usr/local/bin/wrapdocker
 ADD https://get.docker.io/builds/Linux/x86_64/docker-latest /usr/local/bin/docker
 RUN chmod +x /usr/local/bin/docker /usr/local/bin/wrapdocker
 RUN touch /root/.firstrun
