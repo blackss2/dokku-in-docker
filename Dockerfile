@@ -26,6 +26,8 @@ ADD https://get.docker.io/builds/Linux/x86_64/docker-latest /usr/local/bin/docke
 RUN chmod +x /usr/local/bin/docker /usr/local/bin/wrapdocker
 RUN touch /root/.firstrun
 
+RUN docker pull gliderlabs/herokuish
+
 EXPOSE 22
 EXPOSE 80
 EXPOSE 443
