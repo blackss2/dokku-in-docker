@@ -10,7 +10,7 @@ RUN cd /root/dokku; make version
 RUN cd /root/dokku; make plugn
 RUN cd /root/dokku; make copyfiles
 RUN cd /root/dokku; make plugin-dependencies
-RUN cd /root/dokku; make plugins
+# RUN cd /root/dokku; make plugins
 
 RUN wget -O /root/buildstep.tar.gz $(grep PREBUILT_STACK_URL /root/dokku/Makefile | head -n1 | cut -d' ' -f3)
 
