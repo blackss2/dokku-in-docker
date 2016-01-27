@@ -10,9 +10,9 @@ RUN cd /root/dokku; make version
 RUN cd /root/dokku; make plugn
 RUN cd /root/dokku; make copyfiles
 RUN cd /root/dokku; make plugin-dependencies
+RUN cd /root/dokku; make stack
 # RUN cd /root/dokku; make plugins
 
-RUN curl --silent http://dl.gliderlabs.com/herokuish/latest/linux_x86_64.tgz | tar -xzC $(PREBUILT_STACK_URL)
 RUN wget -O /root/buildstep.tar.gz $(grep PREBUILT_STACK_URL /root/dokku/Makefile | head -n1 | cut -d' ' -f3)
 
 VOLUME ["/home/dokku","/var/lib/docker"]
