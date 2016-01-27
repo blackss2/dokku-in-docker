@@ -4,7 +4,7 @@ RUN apt-get update
 RUN apt-get install -y git make curl software-properties-common sudo wget man openssh-server
 RUN apt-get install -y iptables ca-certificates lxc
 RUN git clone https://github.com/progrium/dokku /root/dokku
-RUN cd /root/dokku; make sshcommand help2man plugn copyfiles
+RUN cd /root/dokku; make install
 RUN dokku plugins-install
 
 RUN wget -O /root/buildstep.tar.gz $(grep PREBUILT_STACK_URL /root/dokku/Makefile | head -n1 | cut -d' ' -f3)
