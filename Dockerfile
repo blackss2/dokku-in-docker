@@ -14,7 +14,7 @@ RUN cd /root/dokku; make plugn
 RUN cd /root/dokku; make copyfiles
 RUN cd /root/dokku; make plugin-dependencies
 RUN cd /root/dokku; make stack
-# RUN cd /root/dokku; make plugins
+RUN dokku plugin:install --core
 RUN wget -O /root/buildstep.tar.gz https://github.com/gliderlabs/herokuish
 
 VOLUME ["/home/dokku","/var/lib/docker"]
